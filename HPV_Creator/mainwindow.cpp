@@ -97,10 +97,10 @@ void MainWindow::createWidgets()
     directoryOutLabel->setBuddy(directoryOutEdit);
 
     directoryInButton = new QPushButton();
-    directoryInButton->setText(tr("Choose input folder"));
+    directoryInButton->setText(QStringLiteral("选择输入文件夹"));
 
     directoryOutButton = new QPushButton();
-    directoryOutButton->setText(tr("Choose output folder"));
+    directoryOutButton->setText(QStringLiteral("选择输出文件夹"));
 
     inFrameLabel = new QLabel(tr("Start frame:"));
     inFrameSpinBox = new QSpinBox;
@@ -262,10 +262,9 @@ void MainWindow::updateOutputFolder(const QString &folder)
 
 void MainWindow::directoryInChanged()
 {
-    QString dir = QFileDialog::getExistingDirectory(this, tr("Choose directory with files to convert"),
-                                                    "/home",
+    QString dir = QFileDialog::getExistingDirectory(this, QStringLiteral("选择要转换的文件所在目录"),
+                                                    QDir::home().path(),
                                                     QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
-
     updateInputFolder(dir);
 }
 

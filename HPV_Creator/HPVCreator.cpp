@@ -3,6 +3,7 @@
 #define STB_IMAGE_IMPLEMENTATION
 
 #include <sys/stat.h>
+#include <functional>
 
 #include "stb_dxt.h"
 #include "stb_image.h"
